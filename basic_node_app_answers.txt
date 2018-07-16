@@ -1,0 +1,37 @@
+Exercises
+
+1. What is a Node module?
+>Most commonly, it is a single file containing a function or a bunch of related
+functions, and maybe some other properties, that can be made available to other
+files/modules through the interface of an `exports` object that is returned by
+the `require` function. If you want, you can make it so that your module is not
+this `exports` object, but actually some other object type, like an array or
+class, or just a function definition itself.
+
+2. What is the main difference between `exports` and `module.exports`?
+>The main difference is that `exports` is only a reference to the 
+`module.exports` object. If you assign something directly to `moddule.exports`,
+you will overwrite that object and that's what will be available to other
+modules. If you assign something to `exports`, you only overwrite that pointer,
+but the `modules.exports` object is still as it was.
+
+3.Why is using `exports` recommended?
+>Using `exports` funnels you into the most common usage of `module.exports`.
+You are only adding properties to that object, as the Node gods intended. If
+you do particularly want your module to be exposed as something other than this
+object, you can do so very particularly with `module.exports`.
+
+Programming Questions
+
+4. Add two more functions, `greetingSpanish` and greetingIcelandic`, in
+`greeting.js`.
+>(see .js files)
+
+5. Utilize the two functions in `main.js` just like `greetingEnglish` and
+`greetingJapanese`.
+>(see .js files)
+
+6. Create another Node module and import it into `main.js`. Your Node module
+should have at least two functions within it. Then, call a function from your
+Node module in `main.js`.
+>(see .js files)
